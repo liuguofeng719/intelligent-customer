@@ -63,6 +63,24 @@
 2026-02-03 22:33:30 | apply_patch | backend/src/main/java/com/intelligent/customer/config/AiConfig.java | 添加 Ollama Chat/Embedding Bean 配置。
 2026-02-03 22:33:40 | apply_patch | backend/src/main/resources/application.yml | 增加 Ollama 相关配置。
 2026-02-03 22:35:34 | shell_command | mvn -q -f backend/pom.xml -Dtest=AiConfigTest test | 运行测试（通过）。
+2026-02-03 22:36:02 | shell_command | git add backend/pom.xml backend/src/main/java/com/intelligent/customer/config/AiConfig.java backend/src/main/java/com/intelligent/customer/config/OllamaProperties.java backend/src/main/resources/application.yml backend/src/test/java/com/intelligent/customer/config/AiConfigTest.java .codex/operations-log.md | 暂存 Task 3 变更。
+2026-02-03 22:36:05 | shell_command | git commit -m "feat: configure ollama models" | 提交 Task 3 结果。
+2026-02-03 22:36:12 | update_plan | plan | 更新计划：Task 3 完成，Task 4 进行中。
+2026-02-03 22:39:40 | apply_patch | backend/src/test/java/com/intelligent/customer/repo/RepositorySmokeTest.java | 添加仓储冒烟测试。
+2026-02-03 22:39:50 | shell_command | mvn -q -f backend/pom.xml -Dtest=RepositorySmokeTest test | 运行测试（失败：领域与仓储类未创建）。
+2026-02-03 22:40:20 | apply_patch | backend/src/main/java/com/intelligent/customer/domain/Customer.java | 添加客户实体。
+2026-02-03 22:40:25 | apply_patch | backend/src/main/java/com/intelligent/customer/domain/Product.java | 添加产品实体。
+2026-02-03 22:40:30 | apply_patch | backend/src/main/java/com/intelligent/customer/domain/Order.java | 添加订单实体。
+2026-02-03 22:40:35 | apply_patch | backend/src/main/java/com/intelligent/customer/repo/CustomerRepository.java | 添加客户仓储接口。
+2026-02-03 22:40:38 | apply_patch | backend/src/main/java/com/intelligent/customer/repo/ProductRepository.java | 添加产品仓储接口。
+2026-02-03 22:40:42 | apply_patch | backend/src/main/java/com/intelligent/customer/repo/OrderRepository.java | 添加订单仓储接口。
+2026-02-03 22:40:48 | apply_patch | backend/src/main/resources/schema.sql | 添加业务表结构。
+2026-02-03 22:40:52 | apply_patch | backend/src/main/resources/data.sql | 添加样例数据。
+2026-02-03 22:40:58 | apply_patch | backend/src/main/resources/application.yml | 配置 MySQL 数据源与初始化策略。
+2026-02-03 22:41:02 | apply_patch | backend/pom.xml | 添加 H2 测试依赖。
+2026-02-03 22:41:20 | shell_command | mvn -q -f backend/pom.xml -Dtest=RepositorySmokeTest test | 运行测试（通过）。
+2026-02-03 22:41:30 | apply_patch | backend/src/test/java/com/intelligent/customer/repo/RepositorySmokeTest.java | 清理多余的 H2 方言配置。
+2026-02-03 22:41:40 | shell_command | mvn -q -f backend/pom.xml -Dtest=RepositorySmokeTest test | 再次运行测试（通过）。
 2026-02-03 22:27:20 | shell_command | nl -ba backend/src/main/java/com/intelligent/customer/health/HealthController.java | 查看健康检查控制器行号。
 2026-02-03 22:27:24 | shell_command | nl -ba backend/src/test/java/com/intelligent/customer/health/HealthControllerTest.java | 查看健康检查测试行号。
 2026-02-03 22:27:28 | shell_command | nl -ba backend/src/main/resources/application.yml | 查看基础配置行号。
