@@ -10,6 +10,7 @@
 ## 未执行项与原因
 
 - 未执行完整链路（Ollama + Milvus + MySQL + 前后端联调）：需要本机启动容器与拉取模型，当前未自动启动以避免长时间占用资源。
+  - 尝试启动 `docker compose up -d` 失败：Docker 使用的镜像源 `docker.nju.edu.cn` 超时。
 
 ## 风险说明
 
