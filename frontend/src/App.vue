@@ -1,47 +1,22 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="layout">
+    <header class="app-header">
+      <div class="brand">
+        <div class="brand-title">智能客服演示</div>
+        <div class="brand-subtitle">Spring Boot + LangChain4j + Ollama</div>
+      </div>
+      <nav class="nav">
+        <RouterLink class="nav-link" to="/">聊天</RouterLink>
+        <RouterLink class="nav-link" to="/faq">FAQ 管理</RouterLink>
+        <RouterLink class="nav-link" to="/business">业务查询</RouterLink>
+      </nav>
+    </header>
+    <main class="app-main">
+      <RouterView />
+    </main>
+  </div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>

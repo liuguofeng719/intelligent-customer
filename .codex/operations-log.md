@@ -112,6 +112,21 @@
 2026-02-03 22:56:48 | apply_patch | backend/src/main/java/com/intelligent/customer/api/BusinessController.java | 添加业务查询接口。
 2026-02-03 22:56:55 | apply_patch | backend/src/test/java/com/intelligent/customer/api/ChatControllerTest.java | 添加聊天接口测试。
 2026-02-03 22:58:40 | shell_command | mvn -q -f backend/pom.xml -Dtest=ChatControllerTest test | 运行聊天接口测试（通过）。
+2026-02-03 22:59:10 | shell_command | git add backend/src/main/java/com/intelligent/customer/api backend/src/main/java/com/intelligent/customer/faq/FaqSearchService.java backend/src/test/java/com/intelligent/customer/api .codex/operations-log.md | 暂存 Task 7 变更。
+2026-02-03 22:59:14 | shell_command | git commit -m "feat: add chat, faq and business apis" | 提交 Task 7 结果。
+2026-02-03 22:59:20 | update_plan | plan | 更新计划：Task 7 完成，Task 8 进行中。
+2026-02-03 23:02:10 | apply_patch | frontend/src/main.js | 接入 Vue Router。
+2026-02-03 23:02:20 | apply_patch | frontend/src/App.vue | 替换为应用导航布局。
+2026-02-03 23:02:30 | apply_patch | frontend/src/router/index.js | 添加路由配置。
+2026-02-03 23:02:40 | apply_patch | frontend/src/api/client.js | 添加前端 API 客户端。
+2026-02-03 23:02:50 | apply_patch | frontend/src/views/ChatView.vue | 添加聊天页面。
+2026-02-03 23:02:55 | apply_patch | frontend/src/views/FaqView.vue | 添加 FAQ 页面。
+2026-02-03 23:03:00 | apply_patch | frontend/src/views/BusinessView.vue | 添加业务查询页面。
+2026-02-03 23:03:10 | apply_patch | frontend/src/assets/main.css | 更新全局样式。
+2026-02-03 23:03:20 | apply_patch | frontend/package.json | 添加 vue-router 依赖。
+2026-02-03 23:03:30 | shell_command | npm install | 安装前端依赖（超时）。
+2026-02-03 23:03:40 | shell_command | npm install | 安装前端依赖（首次超时后重试成功）。
+2026-02-03 23:04:10 | shell_command | npm run build | 构建前端（通过）。
 2026-02-03 22:27:20 | shell_command | nl -ba backend/src/main/java/com/intelligent/customer/health/HealthController.java | 查看健康检查控制器行号。
 2026-02-03 22:27:24 | shell_command | nl -ba backend/src/test/java/com/intelligent/customer/health/HealthControllerTest.java | 查看健康检查测试行号。
 2026-02-03 22:27:28 | shell_command | nl -ba backend/src/main/resources/application.yml | 查看基础配置行号。
