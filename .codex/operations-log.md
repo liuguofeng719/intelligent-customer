@@ -127,6 +127,16 @@
 2026-02-03 23:03:30 | shell_command | npm install | 安装前端依赖（超时）。
 2026-02-03 23:03:40 | shell_command | npm install | 安装前端依赖（首次超时后重试成功）。
 2026-02-03 23:04:10 | shell_command | npm run build | 构建前端（通过）。
+2026-02-03 23:04:40 | shell_command | git add frontend/package.json frontend/package-lock.json frontend/src/App.vue frontend/src/main.js frontend/src/assets/main.css frontend/src/router frontend/src/api frontend/src/views .codex/operations-log.md | 暂存 Task 8 变更。
+2026-02-03 23:04:44 | shell_command | git commit -m "feat: add vue pages for chat and faq" | 提交 Task 8 结果。
+2026-02-03 23:04:50 | update_plan | plan | 更新计划：Task 8 完成，Task 9 进行中。
+2026-02-03 23:10:10 | shell_command | curl -L -o /tmp/milvus-standalone-docker-compose.yml https://github.com/milvus-io/milvus/releases/download/v2.6.9/milvus-standalone-docker-compose.yml | 获取官方 compose 文件（超时）。
+2026-02-03 23:10:45 | shell_command | curl -L -o /tmp/milvus-standalone-docker-compose.yml https://raw.githubusercontent.com/milvus-io/milvus/v2.6.9/deployments/docker/standalone/docker-compose.yml | 获取官方 compose 文件（超时）。
+2026-02-03 23:12:10 | apply_patch | docker-compose.yml | 添加本地依赖 docker-compose 配置。
+2026-02-03 23:12:40 | apply_patch | README.md | 添加运行说明文档。
+2026-02-03 23:13:10 | shell_command | docker compose config | 校验 docker-compose 配置（有版本警告）。
+2026-02-03 23:13:40 | apply_patch | docker-compose.yml | 移除过时的 version 字段。
+2026-02-03 23:14:05 | shell_command | docker compose config | 再次校验 docker-compose 配置（通过）。
 2026-02-03 22:27:20 | shell_command | nl -ba backend/src/main/java/com/intelligent/customer/health/HealthController.java | 查看健康检查控制器行号。
 2026-02-03 22:27:24 | shell_command | nl -ba backend/src/test/java/com/intelligent/customer/health/HealthControllerTest.java | 查看健康检查测试行号。
 2026-02-03 22:27:28 | shell_command | nl -ba backend/src/main/resources/application.yml | 查看基础配置行号。
