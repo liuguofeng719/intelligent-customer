@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-02-03 21:39:40",
+  "project_root": "/Users/guofeng/IdeaProjects/springai",
+  "location": "项目当前为空目录，需要初始化全新 Spring Boot + LangChain4j + Ollama + Vue 前后端分离工程。",
+  "current_state": "无现有代码、无构建文件、无文档。",
+  "tech_stack": {
+    "backend": "Spring Boot (Java)",
+    "llm": "LangChain4j + Ollama (qwen2.5:7b)",
+    "database": "MySQL",
+    "vector_store": "Milvus",
+    "frontend": "Vue",
+    "deployment": "docker-compose"
+  },
+  "tests": "暂无测试框架与现有测试文件，需在初始化工程后建立单元/冒烟/功能测试。",
+  "observations": [
+    "目录为空，无法发现相似实现或项目约定。",
+    "需要自行确定项目结构、端口配置、依赖版本与运行脚手架。",
+    "需要补充数据模型与样例数据以满足“数据库 + FAQ + 向量检索”的闭环演示。"
+  ]
+}

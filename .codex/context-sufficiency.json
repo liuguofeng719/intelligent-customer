@@ -1,0 +1,25 @@
+{
+  "timestamp": "2026-02-03 21:43:10",
+  "checklist": {
+    "interface_contracts_clear": {
+      "checked": true,
+      "notes": "已定义核心接口与数据模型；SSE 流式输出已明确。"
+    },
+    "technology_choices_understood": {
+      "checked": true,
+      "notes": "选型基于快速落地与生态成熟度（Spring Boot、LangChain4j、Ollama、MySQL、Milvus）。"
+    },
+    "risks_identified": {
+      "checked": true,
+      "notes": "已识别边界：检索失败/业务查询失败的降级；SSE 断开重连。"
+    },
+    "verification_path_known": {
+      "checked": true,
+      "notes": "已规划单元/冒烟/功能测试，且全部本地执行。"
+    }
+  },
+  "assumptions": [
+    "业务域聚焦订单/产品/售后",
+    "FAQ 来源为示例 Markdown/CSV，可通过导入接口替换"
+  ]
+}

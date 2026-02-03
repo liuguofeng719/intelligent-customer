@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-02-03 21:43:10",
+  "goal": "使用 Spring Boot + LangChain4j + Ollama（qwen2.5:7b）在本地快速落地智能客服核心闭环，提供前后端分离演示与 docker-compose 一键启动。",
+  "scope_in": [
+    "Spring Boot 后端：对话编排、RAG、业务数据查询、SSE 输出",
+    "Vue 前端：聊天界面 + FAQ 管理 + 业务数据演示页",
+    "MySQL 作为业务数据源",
+    "Milvus 作为向量库",
+    "Ollama 作为本地模型与向量嵌入",
+    "样例数据与单元/冒烟/功能测试"
+  ],
+  "scope_out": [
+    "多渠道接入",
+    "工单/人工转接",
+    "运营报表与质检",
+    "多语言支持",
+    "权限/登录等安全模块"
+  ],
+  "constraints": [
+    "优先复用官方/主流生态依赖，禁止自研组件",
+    "不引入安全性设计",
+    "本地自动化测试与验证",
+    "docker-compose 一键启动"
+  ],
+  "deliverables": [
+    "后端工程（intelligent-customer）",
+    "前端工程（Vue）",
+    "docker-compose.yml",
+    "初始化样例数据与 FAQ",
+    "测试与验证记录文档"
+  ],
+  "decisions": {
+    "frontend": "Vue",
+    "llm": "Ollama qwen2.5:7b",
+    "database": "MySQL",
+    "vector_store": "Milvus",
+    "deployment": "docker-compose"
+  }
+}

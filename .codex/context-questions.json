@@ -1,0 +1,35 @@
+{
+  "timestamp": "2026-02-03 21:39:40",
+  "known": [
+    "项目名：intelligent-customer",
+    "基础包名：com.intelligent.customer",
+    "后端：Spring Boot + LangChain4j",
+    "模型：Ollama qwen2.5:7b",
+    "数据库：MySQL",
+    "向量库：Milvus",
+    "前端：Vue，前后端分离",
+    "部署：docker-compose"
+  ],
+  "questions": [
+    {
+      "priority": "high",
+      "question": "业务域范围：客服需要覆盖哪些核心业务（如订单/产品/账户/物流）？"
+    },
+    {
+      "priority": "high",
+      "question": "FAQ 文档来源与结构（Markdown/CSV/数据库/手工录入）？是否需要初始样例数据？"
+    },
+    {
+      "priority": "medium",
+      "question": "接口协议偏好：REST + SSE 流式输出是否可接受？"
+    },
+    {
+      "priority": "medium",
+      "question": "端口规划（后端、前端、MySQL、Milvus、Ollama）是否有固定要求？"
+    },
+    {
+      "priority": "low",
+      "question": "是否需要多租户、权限或登录（当前默认不加）？"
+    }
+  ]
+}
