@@ -81,6 +81,19 @@
 2026-02-03 22:41:20 | shell_command | mvn -q -f backend/pom.xml -Dtest=RepositorySmokeTest test | 运行测试（通过）。
 2026-02-03 22:41:30 | apply_patch | backend/src/test/java/com/intelligent/customer/repo/RepositorySmokeTest.java | 清理多余的 H2 方言配置。
 2026-02-03 22:41:40 | shell_command | mvn -q -f backend/pom.xml -Dtest=RepositorySmokeTest test | 再次运行测试（通过）。
+2026-02-03 22:42:10 | shell_command | git add backend .codex/operations-log.md | 暂存 Task 4 变更。
+2026-02-03 22:42:13 | shell_command | git commit -m "feat: add domain entities and seed data" | 提交 Task 4 结果。
+2026-02-03 22:42:20 | update_plan | plan | 更新计划：Task 4 完成，Task 5 进行中。
+2026-02-03 22:44:10 | apply_patch | backend/src/main/java/com/intelligent/customer/faq/FaqSourceType.java | 添加 FAQ 来源枚举。
+2026-02-03 22:44:15 | apply_patch | backend/src/main/java/com/intelligent/customer/faq/FaqDocument.java | 添加 FAQ 文档模型与转换。
+2026-02-03 22:44:20 | apply_patch | backend/src/main/java/com/intelligent/customer/faq/FaqParser.java | 添加 FAQ 解析器。
+2026-02-03 22:44:25 | apply_patch | backend/src/main/java/com/intelligent/customer/faq/FaqIngestService.java | 添加 FAQ 向量化入库服务。
+2026-02-03 22:44:30 | apply_patch | backend/src/main/java/com/intelligent/customer/config/MilvusProperties.java | 添加 Milvus 配置属性。
+2026-02-03 22:44:34 | apply_patch | backend/src/main/java/com/intelligent/customer/config/FaqProperties.java | 添加 FAQ 切分配置属性。
+2026-02-03 22:44:38 | apply_patch | backend/src/main/java/com/intelligent/customer/config/VectorStoreConfig.java | 添加向量库与入库器配置。
+2026-02-03 22:44:45 | apply_patch | backend/src/main/resources/application.yml | 增加 Milvus 与 FAQ 配置。
+2026-02-03 22:44:50 | apply_patch | backend/src/test/java/com/intelligent/customer/faq/FaqParserTest.java | 添加 FAQ 解析测试。
+2026-02-03 22:45:02 | shell_command | mvn -q -f backend/pom.xml -Dtest=FaqParserTest test | 运行 FAQ 解析测试（通过）。
 2026-02-03 22:27:20 | shell_command | nl -ba backend/src/main/java/com/intelligent/customer/health/HealthController.java | 查看健康检查控制器行号。
 2026-02-03 22:27:24 | shell_command | nl -ba backend/src/test/java/com/intelligent/customer/health/HealthControllerTest.java | 查看健康检查测试行号。
 2026-02-03 22:27:28 | shell_command | nl -ba backend/src/main/resources/application.yml | 查看基础配置行号。

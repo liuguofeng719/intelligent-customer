@@ -24,3 +24,13 @@ ollama:
   embedding-model: nomic-embed-text
   temperature: 0.2
   timeout: PT60S
+
+milvus:
+  host: ${MILVUS_HOST:localhost}
+  port: ${MILVUS_PORT:19530}
+  collection-name: ${MILVUS_COLLECTION:faq_store}
+  dimension: ${MILVUS_DIMENSION:768}
+
+faq:
+  chunk-size: 300
+  overlap: 30
