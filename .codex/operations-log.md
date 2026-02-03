@@ -42,3 +42,14 @@
 2026-02-03 22:19:05 | shell_command | curl -L -o /tmp/intelligent-customer.zip "https://start.spring.io/starter.zip?type=maven-project&language=java&bootVersion=3.5.0&groupId=com.intelligent.customer&artifactId=intelligent-customer&name=intelligent-customer&packageName=com.intelligent.customer&javaVersion=17&dependencies=web,validation,data-jpa,mysql" | 使用 Spring Boot 3.5.0 重新拉取工程。
 2026-02-03 22:19:08 | shell_command | mkdir -p backend && unzip -q /tmp/intelligent-customer.zip -d backend | 初始化后端工程目录结构。
 2026-02-03 22:19:20 | shell_command | npm create vue@latest frontend -- --default | 初始化 Vue 前端工程。
+2026-02-03 22:20:10 | shell_command | git add backend frontend .codex/operations-log.md | 暂存 Task 1 生成文件。
+2026-02-03 22:20:14 | shell_command | git commit -m "chore: initialize backend and frontend skeleton" | 提交 Task 1 结果。
+2026-02-03 22:20:30 | update_plan | plan | 更新计划：Task 1 完成，Task 2 进行中。
+2026-02-03 22:24:02 | shell_command | mkdir -p /Users/guofeng/IdeaProjects/springai-wt/backend/src/test/java/com/intelligent/customer/health && mv /Users/guofeng/IdeaProjects/springai/backend/src/test/java/com/intelligent/customer/health/HealthControllerTest.java /Users/guofeng/IdeaProjects/springai-wt/backend/src/test/java/com/intelligent/customer/health/HealthControllerTest.java | 修正测试文件位置到 worktree。
+2026-02-03 22:24:10 | shell_command | mvn -q -f backend/pom.xml -Dtest=HealthControllerTest test | 运行健康检查测试（失败：数据源未配置）。
+2026-02-03 22:24:58 | apply_patch | backend/src/test/java/com/intelligent/customer/health/HealthControllerTest.java | 为测试禁用 DataSource 自动配置。
+2026-02-03 22:25:10 | shell_command | mvn -q -f backend/pom.xml -Dtest=HealthControllerTest test | 再次运行测试（失败：404）。
+2026-02-03 22:25:40 | apply_patch | backend/src/main/resources/application.properties | 删除 properties 配置文件。
+2026-02-03 22:25:42 | apply_patch | backend/src/main/resources/application.yml | 新增 application.yml 基础配置。
+2026-02-03 22:25:48 | apply_patch | backend/src/main/java/com/intelligent/customer/health/HealthController.java | 新增健康检查控制器。
+2026-02-03 22:26:09 | shell_command | mvn -q -f backend/pom.xml -Dtest=HealthControllerTest test | 运行健康检查测试（通过）。
