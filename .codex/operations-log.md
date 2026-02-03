@@ -53,3 +53,16 @@
 2026-02-03 22:25:42 | apply_patch | backend/src/main/resources/application.yml | 新增 application.yml 基础配置。
 2026-02-03 22:25:48 | apply_patch | backend/src/main/java/com/intelligent/customer/health/HealthController.java | 新增健康检查控制器。
 2026-02-03 22:26:09 | shell_command | mvn -q -f backend/pom.xml -Dtest=HealthControllerTest test | 运行健康检查测试（通过）。
+2026-02-03 22:26:32 | shell_command | git add backend .codex/operations-log.md | 暂存 Task 2 变更。
+2026-02-03 22:26:36 | shell_command | git commit -m "feat: add health endpoint" | 提交 Task 2 结果。
+2026-02-03 22:26:50 | update_plan | plan | 更新计划：Task 2 完成，Task 3 进行中。
+2026-02-03 22:31:10 | apply_patch | backend/src/test/java/com/intelligent/customer/config/AiConfigTest.java | 添加 AI 配置测试。
+2026-02-03 22:31:20 | shell_command | mvn -q -f backend/pom.xml -Dtest=AiConfigTest test | 运行测试（失败：缺少 LangChain4j 依赖）。
+2026-02-03 22:33:02 | apply_patch | backend/pom.xml | 添加 LangChain4j BOM 与 Ollama/Milvus 依赖。
+2026-02-03 22:33:20 | apply_patch | backend/src/main/java/com/intelligent/customer/config/OllamaProperties.java | 添加 Ollama 配置属性类。
+2026-02-03 22:33:30 | apply_patch | backend/src/main/java/com/intelligent/customer/config/AiConfig.java | 添加 Ollama Chat/Embedding Bean 配置。
+2026-02-03 22:33:40 | apply_patch | backend/src/main/resources/application.yml | 增加 Ollama 相关配置。
+2026-02-03 22:35:34 | shell_command | mvn -q -f backend/pom.xml -Dtest=AiConfigTest test | 运行测试（通过）。
+2026-02-03 22:27:20 | shell_command | nl -ba backend/src/main/java/com/intelligent/customer/health/HealthController.java | 查看健康检查控制器行号。
+2026-02-03 22:27:24 | shell_command | nl -ba backend/src/test/java/com/intelligent/customer/health/HealthControllerTest.java | 查看健康检查测试行号。
+2026-02-03 22:27:28 | shell_command | nl -ba backend/src/main/resources/application.yml | 查看基础配置行号。
