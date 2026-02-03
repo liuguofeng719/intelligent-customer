@@ -94,6 +94,13 @@
 2026-02-03 22:44:45 | apply_patch | backend/src/main/resources/application.yml | 增加 Milvus 与 FAQ 配置。
 2026-02-03 22:44:50 | apply_patch | backend/src/test/java/com/intelligent/customer/faq/FaqParserTest.java | 添加 FAQ 解析测试。
 2026-02-03 22:45:02 | shell_command | mvn -q -f backend/pom.xml -Dtest=FaqParserTest test | 运行 FAQ 解析测试（通过）。
+2026-02-03 22:45:20 | shell_command | git add backend/src/main/java/com/intelligent/customer/config/FaqProperties.java backend/src/main/java/com/intelligent/customer/config/MilvusProperties.java backend/src/main/java/com/intelligent/customer/config/VectorStoreConfig.java backend/src/main/java/com/intelligent/customer/faq backend/src/test/java/com/intelligent/customer/faq backend/src/main/resources/application.yml .codex/operations-log.md | 暂存 Task 5 变更。
+2026-02-03 22:45:24 | shell_command | git commit -m "feat: add faq ingest and embeddings" | 提交 Task 5 结果。
+2026-02-03 22:45:30 | update_plan | plan | 更新计划：Task 5 完成，Task 6 进行中。
+2026-02-03 22:47:10 | apply_patch | backend/src/main/java/com/intelligent/customer/chat/PromptComposer.java | 添加提示词拼装器。
+2026-02-03 22:47:15 | apply_patch | backend/src/main/java/com/intelligent/customer/chat/ChatService.java | 添加对话服务。
+2026-02-03 22:47:20 | apply_patch | backend/src/test/java/com/intelligent/customer/chat/PromptComposerTest.java | 添加提示词拼装测试。
+2026-02-03 22:47:26 | shell_command | mvn -q -f backend/pom.xml -Dtest=PromptComposerTest test | 运行提示词拼装测试（通过）。
 2026-02-03 22:27:20 | shell_command | nl -ba backend/src/main/java/com/intelligent/customer/health/HealthController.java | 查看健康检查控制器行号。
 2026-02-03 22:27:24 | shell_command | nl -ba backend/src/test/java/com/intelligent/customer/health/HealthControllerTest.java | 查看健康检查测试行号。
 2026-02-03 22:27:28 | shell_command | nl -ba backend/src/main/resources/application.yml | 查看基础配置行号。
