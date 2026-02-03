@@ -101,6 +101,17 @@
 2026-02-03 22:47:15 | apply_patch | backend/src/main/java/com/intelligent/customer/chat/ChatService.java | 添加对话服务。
 2026-02-03 22:47:20 | apply_patch | backend/src/test/java/com/intelligent/customer/chat/PromptComposerTest.java | 添加提示词拼装测试。
 2026-02-03 22:47:26 | shell_command | mvn -q -f backend/pom.xml -Dtest=PromptComposerTest test | 运行提示词拼装测试（通过）。
+2026-02-03 22:47:50 | shell_command | git add backend/src/main/java/com/intelligent/customer/chat backend/src/test/java/com/intelligent/customer/chat .codex/operations-log.md | 暂存 Task 6 变更。
+2026-02-03 22:47:54 | shell_command | git commit -m "feat: add prompt composer and chat service" | 提交 Task 6 结果。
+2026-02-03 22:48:00 | update_plan | plan | 更新计划：Task 6 完成，Task 7 进行中。
+2026-02-03 22:56:20 | apply_patch | backend/src/main/java/com/intelligent/customer/faq/FaqSearchService.java | 添加 FAQ 检索服务。
+2026-02-03 22:56:30 | apply_patch | backend/src/main/java/com/intelligent/customer/api/dto/ChatRequest.java | 添加聊天请求 DTO。
+2026-02-03 22:56:34 | apply_patch | backend/src/main/java/com/intelligent/customer/api/dto/FaqImportRequest.java | 添加 FAQ 导入请求 DTO。
+2026-02-03 22:56:40 | apply_patch | backend/src/main/java/com/intelligent/customer/api/ChatController.java | 添加聊天 SSE 接口。
+2026-02-03 22:56:44 | apply_patch | backend/src/main/java/com/intelligent/customer/api/FaqController.java | 添加 FAQ 导入与检索接口。
+2026-02-03 22:56:48 | apply_patch | backend/src/main/java/com/intelligent/customer/api/BusinessController.java | 添加业务查询接口。
+2026-02-03 22:56:55 | apply_patch | backend/src/test/java/com/intelligent/customer/api/ChatControllerTest.java | 添加聊天接口测试。
+2026-02-03 22:58:40 | shell_command | mvn -q -f backend/pom.xml -Dtest=ChatControllerTest test | 运行聊天接口测试（通过）。
 2026-02-03 22:27:20 | shell_command | nl -ba backend/src/main/java/com/intelligent/customer/health/HealthController.java | 查看健康检查控制器行号。
 2026-02-03 22:27:24 | shell_command | nl -ba backend/src/test/java/com/intelligent/customer/health/HealthControllerTest.java | 查看健康检查测试行号。
 2026-02-03 22:27:28 | shell_command | nl -ba backend/src/main/resources/application.yml | 查看基础配置行号。
