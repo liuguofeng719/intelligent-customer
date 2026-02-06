@@ -1,4 +1,5 @@
 <script setup>
+// 默认演示组件（Vite 模板保留）
 defineProps({
   msg: {
     type: String,

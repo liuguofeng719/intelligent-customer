@@ -1,22 +1,22 @@
 package com.intelligent.customer.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 
-@Entity
-@Table(name = "customer")
+/**
+ * 客户实体，存储基础信息。
+ */
+@TableName("customer")
 public class Customer {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @TableId(type = IdType.AUTO)
+    // 主键 ID
     private Long id;
 
-    @Column(nullable = false)
+    // 客户姓名（必填）
     private String name;
 
+    // 联系电话
     private String phone;
 
     public Customer() {

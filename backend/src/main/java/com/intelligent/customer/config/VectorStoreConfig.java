@@ -11,10 +11,17 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * 向量库与 FAQ 分段相关配置。
+ * 约束：Milvus 必须可连接；默认维度与分段参数在配置缺省时生效。
+ */
 @Configuration
 @EnableConfigurationProperties({MilvusProperties.class, FaqProperties.class})
 public class VectorStoreConfig {
 
+    /**
+     * 构建 Milvus 向量存储实例。
+     */
     @Bean
     public MilvusEmbeddingStore milvusEmbeddingStore(MilvusProperties properties) {
         int dimension = properties.dimension() == null ? 768 : properties.dimension();
@@ -29,6 +36,9 @@ public class VectorStoreConfig {
                 .build();
     }
 
+    /**
+     * 构建 FAQ 入库组件，负责分段与向量写入。
+     */
     @Bean
     public EmbeddingStoreIngestor embeddingStoreIngestor(EmbeddingModel embeddingModel,
                                                          MilvusEmbeddingStore embeddingStore,

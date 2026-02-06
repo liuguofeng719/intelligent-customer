@@ -1,0 +1,42 @@
+<svg width="1080" height="1350" viewBox="0 0 1080 1350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1350" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0B1020"/>
+      <stop offset="1" stop-color="#1B2A45"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2563EB" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0.25"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(920 200) rotate(90) scale(320)">
+      <stop offset="0" stop-color="#38BDF8" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1080" height="1350" fill="url(#bg)"/>
+  <circle cx="920" cy="200" r="320" fill="url(#glow)"/>
+  <rect x="-20" y="880" width="1120" height="130" fill="url(#band)"/>
+
+  <g fill="#FFFFFF" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif">
+    <text x="90" y="320" font-size="68" font-weight="600">智能客服实战：</text>
+    <text x="90" y="410" font-size="60" font-weight="600">Spring Boot + LangChain4j + Ollama</text>
+    <text x="90" y="500" font-size="64" font-weight="600">全链路落地与避坑指南</text>
+    <text x="90" y="590" font-size="34" fill="#CBD5E1">本地可复现 · 工程闭环 · 业务查询增强</text>
+  </g>
+
+  <g fill="#94A3B8" font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif">
+    <text x="90" y="1220" font-size="30">Spring Boot 3.5  |  MyBatis-Plus  |  Milvus  |  Ollama</text>
+  </g>
+
+  <g fill="#FFFFFF" opacity="0.6">
+    <circle cx="90" cy="240" r="4"/>
+    <circle cx="210" cy="240" r="4"/>
+    <circle cx="330" cy="240" r="4"/>
+    <circle cx="450" cy="240" r="4"/>
+    <circle cx="570" cy="240" r="4"/>
+    <circle cx="690" cy="240" r="4"/>
+    <circle cx="810" cy="240" r="4"/>
+    <circle cx="930" cy="240" r="4"/>
+  </g>
+</svg>

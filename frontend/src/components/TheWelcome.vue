@@ -1,4 +1,5 @@
 <script setup>
+// 默认欢迎页组件（Vite 模板保留）
 import WelcomeItem from './WelcomeItem.vue'
 import DocumentationIcon from './icons/IconDocumentation.vue'
 import ToolingIcon from './icons/IconTooling.vue'

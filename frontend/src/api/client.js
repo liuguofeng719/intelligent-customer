@@ -1,5 +1,7 @@
+// API 基础地址，默认与前端同源
 const API_BASE = import.meta.env.VITE_API_BASE || ''
 
+// 读取 SSE/流式响应为完整字符串
 async function readStream(response) {
   const reader = response.body?.getReader()
   if (!reader) {
@@ -15,6 +17,7 @@ async function readStream(response) {
   return result
 }
 
+// 发送聊天请求并解析 SSE 数据
 export async function chat(question) {
   const resp = await fetch(`${API_BASE}/api/chat`, {
     method: 'POST',
@@ -33,6 +36,7 @@ export async function chat(question) {
   return dataLines.map((line) => line.replace(/^data:\s?/, '')).join('')
 }
 
+// 导入 FAQ 内容
 export async function importFaq(sourceType, content) {
   const resp = await fetch(`${API_BASE}/api/faq/import`, {
     method: 'POST',
@@ -45,6 +49,7 @@ export async function importFaq(sourceType, content) {
   return resp.json()
 }
 
+// 检索 FAQ 片段
 export async function searchFaq(query, topK = 3) {
   const resp = await fetch(`${API_BASE}/api/faq/search?query=${encodeURIComponent(query)}&topK=${topK}`)
   if (!resp.ok) {
@@ -53,6 +58,7 @@ export async function searchFaq(query, topK = 3) {
   return resp.json()
 }
 
+// 查询客户信息
 export async function fetchCustomer(id) {
   const resp = await fetch(`${API_BASE}/api/customers/${id}`)
   if (!resp.ok) {
@@ -61,6 +67,7 @@ export async function fetchCustomer(id) {
   return resp.json()
 }
 
+// 查询产品信息
 export async function fetchProduct(id) {
   const resp = await fetch(`${API_BASE}/api/products/${id}`)
   if (!resp.ok) {
@@ -69,6 +76,7 @@ export async function fetchProduct(id) {
   return resp.json()
 }
 
+// 查询订单信息
 export async function fetchOrder(id) {
   const resp = await fetch(`${API_BASE}/api/orders/${id}`)
   if (!resp.ok) {

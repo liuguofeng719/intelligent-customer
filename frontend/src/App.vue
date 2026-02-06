@@ -1,4 +1,5 @@
 <script setup>
+// 应用壳组件，提供顶部导航与路由出口
 import { RouterLink, RouterView } from 'vue-router'
 </script>
 

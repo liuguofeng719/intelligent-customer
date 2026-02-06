@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * FAQ 管理接口，用于导入与检索。
+ */
 @RestController
 @RequestMapping("/api/faq")
 public class FaqController {
@@ -24,12 +27,18 @@ public class FaqController {
         this.searchService = searchService;
     }
 
+    /**
+     * 导入 FAQ 内容，返回写入条数。
+     */
     @PostMapping("/import")
     public Map<String, Object> importFaq(@RequestBody FaqImportRequest request) {
         int count = ingestService.ingest(request.sourceType(), request.content());
         return Map.of("count", count);
     }
 
+    /**
+     * 按问题检索 FAQ 片段。
+     */
     @GetMapping("/search")
     public List<String> search(@RequestParam("query") String query,
                                @RequestParam(value = "topK", defaultValue = "3") int topK) {

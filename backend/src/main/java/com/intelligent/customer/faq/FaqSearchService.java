@@ -12,6 +12,9 @@ import org.springframework.stereotype.Service;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * FAQ 检索服务，基于向量相似度返回片段。
+ */
 @Service
 public class FaqSearchService {
     private final EmbeddingModel embeddingModel;
@@ -22,6 +25,13 @@ public class FaqSearchService {
         this.embeddingStore = embeddingStore;
     }
 
+    /**
+     * 按问题检索相关 FAQ 片段。
+     *
+     * @param query      用户问题
+     * @param maxResults 返回条数
+     * @return FAQ 片段列表
+     */
     public List<String> search(String query, int maxResults) {
         if (query == null || query.isBlank()) {
             return Collections.emptyList();

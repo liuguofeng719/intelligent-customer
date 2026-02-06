@@ -4,9 +4,15 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+/**
+ * 提示词拼装器，统一构造客服上下文。
+ */
 @Component
 public class PromptComposer {
 
+    /**
+     * 组装提示词，包含业务事实、FAQ 与用户问题。
+     */
     public String compose(String question, List<String> faqSnippets, String businessSummary) {
         StringBuilder prompt = new StringBuilder();
         prompt.append("你是智能客服，请基于业务事实与FAQ回答用户问题。\n");

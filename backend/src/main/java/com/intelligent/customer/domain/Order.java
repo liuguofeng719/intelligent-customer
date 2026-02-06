@@ -1,35 +1,38 @@
 package com.intelligent.customer.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "orders")
+/**
+ * 订单实体，存储交易信息。
+ */
+@TableName("orders")
 public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @TableId(type = IdType.AUTO)
+    // 主键 ID
     private Long id;
 
-    @Column(name = "customer_id", nullable = false)
+    @TableField("customer_id")
+    // 客户 ID（必填）
     private Long customerId;
 
-    @Column(name = "product_id", nullable = false)
+    @TableField("product_id")
+    // 产品 ID（必填）
     private Long productId;
 
-    @Column(nullable = false)
+    // 订单状态（必填）
     private String status;
 
-    @Column(nullable = false)
+    // 订单金额（必填）
     private BigDecimal amount;
 
-    @Column(name = "created_at", nullable = false)
+    @TableField("created_at")
+    // 创建时间（必填）
     private LocalDateTime createdAt;
 
     public Order() {

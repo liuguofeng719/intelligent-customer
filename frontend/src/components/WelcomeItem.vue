@@ -1,4 +1,5 @@
 <template>
+  <!-- 通用欢迎项布局（Vite 模板保留） -->
   <div class="item">
     <i>
       <slot name="icon"></slot>

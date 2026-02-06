@@ -1,4 +1,5 @@
 <script setup>
+// 对话页面：发送问题并展示客服回复
 import { ref } from 'vue'
 import { chat } from '../api/client'
 
@@ -6,6 +7,7 @@ const input = ref('')
 const loading = ref(false)
 const messages = ref([])
 
+// 发送问题并追加消息
 const send = async () => {
   const question = input.value.trim()
   if (!question || loading.value) return

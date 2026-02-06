@@ -39,6 +39,8 @@ npm run dev
   - `MYSQL_URL`（默认：`jdbc:mysql://localhost:3306/intelligent_customer`）  
   - `MYSQL_USER`（默认：`root`）  
   - `MYSQL_PASSWORD`（默认：`root`）  
+- MyBatis-Plus  
+  - 默认开启下划线转驼峰（`map-underscore-to-camel-case: true`）  
 - Ollama  
   - `ollama.base-url`（默认：`http://localhost:11434`）  
   - `ollama.chat-model`（默认：`qwen2.5:7b`）  

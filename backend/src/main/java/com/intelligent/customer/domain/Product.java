@@ -1,28 +1,27 @@
 package com.intelligent.customer.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "product")
+/**
+ * 产品实体，存储商品信息。
+ */
+@TableName("product")
 public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @TableId(type = IdType.AUTO)
+    // 主键 ID
     private Long id;
 
-    @Column(nullable = false)
+    // 产品名称（必填）
     private String name;
 
-    @Column(nullable = false)
+    // 单价（必填）
     private BigDecimal price;
 
-    @Column(nullable = false)
+    // 库存数量（必填）
     private Integer stock;
 
     public Product() {

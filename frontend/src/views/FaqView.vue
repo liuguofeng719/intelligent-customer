@@ -1,4 +1,5 @@
 <script setup>
+// FAQ 管理页面：导入与检索
 import { ref } from 'vue'
 import { importFaq, searchFaq } from '../api/client'
 
@@ -8,6 +9,7 @@ const importResult = ref('')
 const query = ref('')
 const results = ref([])
 
+// 调用导入接口并回显结果
 const doImport = async () => {
   importResult.value = ''
   try {
@@ -18,6 +20,7 @@ const doImport = async () => {
   }
 }
 
+// 调用检索接口并展示列表
 const doSearch = async () => {
   if (!query.value.trim()) return
   try {

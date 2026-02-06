@@ -6,9 +6,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * FAQ 解析器，支持 Markdown/CSV/文本。
+ */
 @Component
 public class FaqParser {
 
+    /**
+     * 根据格式分发解析逻辑。
+     */
     public List<FaqDocument> parse(FaqSourceType sourceType, String content) {
         if (sourceType == null) {
             return parseText(content);
@@ -20,6 +26,9 @@ public class FaqParser {
         };
     }
 
+    /**
+     * 解析 Markdown 标题分段的 FAQ。
+     */
     public List<FaqDocument> parseMarkdown(String markdown) {
         if (markdown == null || markdown.isBlank()) {
             return Collections.emptyList();
@@ -50,6 +59,9 @@ public class FaqParser {
         return docs;
     }
 
+    /**
+     * 解析 CSV（标题,内容）的 FAQ。
+     */
     public List<FaqDocument> parseCsv(String csv) {
         if (csv == null || csv.isBlank()) {
             return Collections.emptyList();
@@ -76,6 +88,9 @@ public class FaqParser {
         return docs;
     }
 
+    /**
+     * 解析纯文本 FAQ。
+     */
     public List<FaqDocument> parseText(String text) {
         if (text == null || text.isBlank()) {
             return Collections.emptyList();
@@ -83,6 +98,9 @@ public class FaqParser {
         return List.of(new FaqDocument("FAQ", text.trim(), Collections.emptyList()));
     }
 
+    /**
+     * 追加有效文档，忽略空标题与空内容。
+     */
     private void appendDocIfPresent(List<FaqDocument> docs, String title, StringBuilder content) {
         if ((title == null || title.isBlank()) && content.isEmpty()) {
             return;

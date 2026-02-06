@@ -1,4 +1,5 @@
 <script setup>
+// 业务查询页面：根据 ID 获取客户/产品/订单
 import { ref } from 'vue'
 import { fetchCustomer, fetchOrder, fetchProduct } from '../api/client'
 
@@ -10,6 +11,7 @@ const customer = ref(null)
 const product = ref(null)
 const order = ref(null)
 
+// 查询客户信息
 const loadCustomer = async () => {
   try {
     customer.value = await fetchCustomer(customerId.value)
@@ -18,6 +20,7 @@ const loadCustomer = async () => {
   }
 }
 
+// 查询产品信息
 const loadProduct = async () => {
   try {
     product.value = await fetchProduct(productId.value)
@@ -26,6 +29,7 @@ const loadProduct = async () => {
   }
 }
 
+// 查询订单信息
 const loadOrder = async () => {
   try {
     order.value = await fetchOrder(orderId.value)
