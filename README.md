@@ -47,9 +47,37 @@ npm run dev
   - `MILVUS_PORT`（默认：`19530`）  
   - `MILVUS_COLLECTION`（默认：`faq_store`）  
   - `MILVUS_DIMENSION`（默认：`768`）
+- Vanna（NL2SQL 服务）  
+  - `VANNA_BASE_URL`（默认：`http://localhost:8081`）  
+  - `VANNA_SQL_PATH`（默认：`/api/v1/sql`）  
+  - `VANNA_TIMEOUT`（默认：`PT30S`）  
+  - `VANNA_DIALECT`（默认：`mysql`）
 
 前端配置：
 - `VITE_API_BASE`：后端地址前缀（默认空，等于当前域名）
+
+## Vanna 本地服务启动说明
+
+> 说明：项目通过 `POST /api/v1/sql` 调用 Vanna 服务生成 SQL，请确保本地 Vanna 服务已启动并可访问。
+
+1. 使用 docker-compose 启动 Vanna（默认使用 Ollama + MySQL）ollama 最好本地部署，不要使用docker速度慢
+```bash
+docker compose up -d mysql ollama vanna
+```
+
+2. 配置环境变量（示例）
+```bash
+export VANNA_BASE_URL=http://localhost:8081
+export VANNA_SQL_PATH=/api/v1/sql
+export VANNA_DIALECT=mysql
+```
+
+3. 启动 Vanna 服务后进行连通性验证
+```bash
+curl -s -X POST http://localhost:8081/api/v1/sql \
+  -H "Content-Type: application/json" \
+  -d '{"question":"查询订单1","schema":"tables: orders(id, customer_id, product_id, status, amount, created_at)","dialect":"mysql"}'
+```
 
 ## 接口示例
 

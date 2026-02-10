@@ -37,6 +37,12 @@ milvus:
   collection-name: ${MILVUS_COLLECTION:faq_store}
   dimension: ${MILVUS_DIMENSION:768}
 
+vanna:
+  base-url: ${VANNA_BASE_URL:http://localhost:8081}
+  sql-path: ${VANNA_SQL_PATH:/api/v1/sql}
+  timeout: ${VANNA_TIMEOUT:PT30S}
+  dialect: ${VANNA_DIALECT:mysql}
+
 faq:
   chunk-size: 300
   overlap: 30

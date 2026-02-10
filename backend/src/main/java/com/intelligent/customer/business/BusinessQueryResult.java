@@ -8,8 +8,7 @@ import java.util.Map;
  */
 public record BusinessQueryResult(
         String summary,
-        BusinessQueryDsl dsl,
-        BusinessQuerySql sql,
+        String sql,
         List<Map<String, Object>> rows
 ) {
     public boolean hasSummary() {

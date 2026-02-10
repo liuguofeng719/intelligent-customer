@@ -1,0 +1,4 @@
+flask
+python-dotenv
+db-dtypes
+vanna[mysql,ollama,flask]
