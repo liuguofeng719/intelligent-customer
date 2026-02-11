@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
  * Vanna 客户端配置。
  */
 @Configuration
-@EnableConfigurationProperties(VannaProperties.class)
+@EnableConfigurationProperties({VannaProperties.class, ChatMemoryProperties.class, ChatClarifyProperties.class})
 public class VannaConfig {
 
     @Bean

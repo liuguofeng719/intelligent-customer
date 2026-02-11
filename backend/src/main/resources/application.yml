@@ -46,3 +46,16 @@ vanna:
 faq:
   chunk-size: 300
   overlap: 30
+
+chat:
+  memory:
+    max-messages: 6
+  clarify:
+    short-question-length: 3
+    min-question-length: 6
+    enable-pronoun-check: true
+    generic-template: "请补充您要咨询的具体问题。"
+    pronoun-template: "请说明具体指的是哪一单或哪件商品？"
+    order-template: "请提供订单号或下单手机号。"
+    product-template: "请提供商品名称或编号。"
+    customer-template: "请提供客户编号或手机号。"

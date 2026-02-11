@@ -29,12 +29,16 @@ public class ChatService {
      * @param businessSummary 业务摘要信息
      * @return 客服回复
      */
-    public String answer(String question, List<String> faqSnippets, String businessSummary) {
+    public String answer(String question,
+                         List<String> faqSnippets,
+                         String businessSummary,
+                         List<ChatHistoryItem> history,
+                         ChatIntent intent) {
         log.info("对话服务开始 questionLength={} faqCount={} summaryPresent={}",
                 question == null ? 0 : question.length(),
                 faqSnippets == null ? 0 : faqSnippets.size(),
                 businessSummary != null && !businessSummary.isBlank());
-        String prompt = promptComposer.compose(question, faqSnippets, businessSummary);
+        String prompt = promptComposer.compose(question, faqSnippets, businessSummary, history, intent);
         log.info("对话服务提示词已构建 promt =\n {} promptLength={}", prompt, prompt.length());
         return chatModel.chat(prompt);
     }

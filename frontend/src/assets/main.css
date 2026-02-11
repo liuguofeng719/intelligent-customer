@@ -76,6 +76,31 @@ body {
   margin-bottom: 12px;
 }
 
+.chat-summary {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.chat-summary .summary-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #f1f5f9;
+  font-size: 12px;
+}
+
+.chat-summary .label {
+  color: #64748b;
+}
+
+.chat-summary .value {
+  font-weight: 600;
+  color: #1f2937;
+}
+
 .chat-window {
   min-height: 240px;
   background: #f9fafc;
@@ -88,6 +113,32 @@ body {
   display: flex;
   gap: 8px;
   padding: 6px 0;
+}
+
+.chat-line.assistant {
+  justify-content: flex-start;
+}
+
+.chat-line.user {
+  justify-content: flex-end;
+}
+
+.chat-line .content {
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  max-width: 70%;
+}
+
+.chat-line.user .content {
+  background: #ecfdf3;
+  border-color: #bbf7d0;
+}
+
+.chat-line.assistant .content {
+  background: #eff6ff;
+  border-color: #bfdbfe;
 }
 
 .chat-line .role {
@@ -121,11 +172,21 @@ button {
   cursor: pointer;
 }
 
+button.secondary {
+  background: #64748b;
+}
+
 .form-row {
   display: flex;
   gap: 12px;
   align-items: center;
   margin-bottom: 12px;
+}
+
+.form-label {
+  min-width: 90px;
+  color: #4b5563;
+  font-size: 12px;
 }
 
 .form-row input,

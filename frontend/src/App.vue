@@ -12,6 +12,7 @@ import { RouterLink, RouterView } from 'vue-router'
       </div>
       <nav class="nav">
         <RouterLink class="nav-link" to="/">聊天</RouterLink>
+        <RouterLink class="nav-link" to="/chat-settings">对话设置</RouterLink>
         <RouterLink class="nav-link" to="/faq">FAQ 管理</RouterLink>
         <RouterLink class="nav-link" to="/business">业务查询</RouterLink>
       </nav>
